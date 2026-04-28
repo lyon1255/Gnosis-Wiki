@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
+  base: '/Gnosis-Wiki/',
   title: "Gnosis: The Sunken Gates",
   description: "Official Technical & Lore Wiki",
   
