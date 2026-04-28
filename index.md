@@ -1,25 +1,23 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
 layout: home
 
 hero:
-  name: "Gnosis Wiki"
-  text: "Technical Reference"
-  tagline: My great project tagline
+  name: "Gnosis: The Sunken Gates"
+  text: "The Surface is gone. The Depth is our only salvation."
+  tagline: "Explore the 100 floors of the Sunken Babel. Survive the simulation. Break the seal."
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Explore the Lore
+      link: /lore
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Levels & Bosses
+      link: /levels
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: The Sunken Babel
+    details: A massive crater leading to simulated reality pockets. 100 floors of descending madness beneath the Aether Storm.
+  - title: Global Progression
+    details: First kills on Level Bosses shatter the seals for the entire server. Become a legend.
+  - title: Solo Leveling Vibe
+    details: Dark catacombs, punishing traps, and the Echo System. Face the shadows of fallen gods.
 ---
-
