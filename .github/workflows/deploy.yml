@@ -16,18 +16,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # Ez a rész mondja meg a GitHubnak, hogy ne panaszkodjon a verziók miatt
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-    
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@v4 # 2026-ban ellenőrizd, van-e már v5!
+      
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # A legfrissebb stabil verzió 2026-ban
+          node-version: 24 # Kifejezetten a 2026-os standard
           cache: npm
 
       - name: Install dependencies
