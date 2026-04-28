@@ -2,7 +2,7 @@ name: Deploy VitePress site to Pages
 
 on:
   push:
-    branches: [main] # Vagy 'master', ha neked az az alapértelmezett
+    branches: [main]
 
 permissions:
   contents: read
@@ -19,18 +19,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24 # Frissítve a legújabb Node.js-re
           cache: npm
+
       - name: Install dependencies
         run: npm install
+
       - name: Build with VitePress
-        run: npm run docs:build
+        # Kényszerítjük az npx használatát, hogy biztosan megtalálja a parancsot
+        run: npx vitepress build 
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # A build eredménye alapértelmezetten a .vitepress/dist mappába kerül
           path: .vitepress/dist
 
   deploy:
