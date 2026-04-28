@@ -1,4 +1,7 @@
 {
+  "name": "gnosis-wiki",
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev",
     "docs:build": "vitepress build",
