@@ -16,6 +16,10 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # Ez a sor javítja ki a Node.js 20 deprecation figyelmeztetést:
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,20 +27,20 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24 # Frissítve a legújabb Node.js-re
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
+        # A --prefer-offline és az install parancs biztosítja a csomagokat
         run: npm install
 
       - name: Build with VitePress
-        # Kényszerítjük az npx használatát, hogy biztosan megtalálja a parancsot
-        run: npx vitepress build 
+        # Kényszerítjük a VitePress buildet
+        run: npx vitepress build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # A build eredménye alapértelmezetten a .vitepress/dist mappába kerül
           path: .vitepress/dist
 
   deploy:
